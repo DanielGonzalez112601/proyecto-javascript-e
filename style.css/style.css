@@ -8,6 +8,8 @@ body {
     margin: 20px;
     padding: 10px;
     text-align: center;
+    font-size: 40px;
+    font-family: fantasy;
   }
   
   .productos {
@@ -20,7 +22,7 @@ body {
     width: 400px;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 3px solid #ccc;
     text-align: center;
   }
   
@@ -60,7 +62,10 @@ body {
     cursor: pointer;
   }
   
-
+  .montototal{
+    font-family: fantasy;
+    font-size: 30px;
+  }
 
 
 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>proyecto javascrip</title>
+    <link rel="stylesheet" type="text/css" href="./style.css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="./paginas/carrito.html">
+            <img src="./camisetas/carrito-de-compras.png" alt="Carrito de compras" height="30">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./paginas/carrito.html">Carrito</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>CAMISETAS UY</h1>
+    <div class="productos">
+        <div class="producto">
+            <img src="./camisetas/real-madrid.webp" alt="Producto 1">
+            <h2>REAL MADRID</h2>
+            <p>$120</p>
+            <button class="boton-comprar" onclick="agregarAlCarrito(1)">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="./camisetas/atletico-de-madrid-.jpg" alt="Producto 2">
+            <h2>ATLETICO DE MADRID</h2>
+            <p>$120</p>
+            <button class="boton-comprar" onclick="agregarAlCarrito(2)">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="./camisetas/betis.webp" alt="Producto 3">
+            <h2>REAL BETIS</h2>
+            <p>$100</p>
+            <button class="boton-comprar" onclick="agregarAlCarrito(3)">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="./camisetas/valencia.jpg" alt="Producto 4">
+            <h2>VALENCIA</h2>
+            <p>$100</p>
+            <button class="boton-comprar" onclick="agregarAlCarrito(4)">Comprar</button>
+        </div>
+
+        <div class="producto">
+            <img src="./camisetas/barselona.webp" alt="Producto 5">
+            <h2>BARCELONA</h2>
+            <p>$100</p>
+            <button class="boton-comprar" onclick="agregarAlCarrito(5)">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="./camisetas/celta-de-vigo.jpg" alt="Producto 6">
+            <h2>CELTA DE VIGO</h2>
+            <p>$100</p>
+            <button class="boton-comprar" onclick="agregarAlCarrito(6)">Comprar</button>
+        </div>
+    </div>
+
+    <h2>Carrito</h2>
+    <ul id="carrito">
+ 
+    </ul>
+    <p>Monto Total: <span id="monto-total">$0.00</span></p>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="./javascrip.js/index.js"></script>
+
+
+</body>
+
+</html>

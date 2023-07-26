@@ -13,11 +13,11 @@ class Producto {
 
 const imagenesProductos = {
     "REAL MADRID": "./camisetas/real-madrid.webp",
-    "ATLETICO DE MADRID": "./camisetas/atletico-de-madrid-.jpg",
+    "P S G": "./camisetas/psg.webp",
     "REAL BETIS": "./camisetas/betis.webp",
-    "VALENCIA": "./camisetas/valencia.jpg",
+    "VALENCIA": "./camisetas/valencia2.webp",
     "BARCELONA": "./camisetas/barselona.webp",
-    "CELTA DE VIGO": "./camisetas/celta-de-vigo.jpg"
+    "LIVERPOOL": "./camisetas/liverpool.webp"
   };
   
 function agregarAlCarrito(id) {
@@ -26,18 +26,27 @@ function agregarAlCarrito(id) {
     if (id === 1) {
         producto = new Producto(id, "REAL MADRID", 120, "./camisetas/real-madrid.webp");
     } else if (id === 2) {
-        producto = new Producto(id, "ATLETICO DE MADRID", 120, "./camisetas/atletico-de-madrid-.jpg");
+        producto = new Producto(id, "P S G", 120, "./camisetas/psg.webp");
     } else if (id === 3) {
         producto = new Producto(id, "REAL BETIS", 100, "./camisetas/betis.webp");
     } else if (id === 4) {
-        producto = new Producto(id, "VALENCIA", 100, "./camisetas/valencia.jpg");
+        producto = new Producto(id, "VALENCIA", 100, "./camisetas/valencia2.webp");
     } else if (id === 5) {
         producto = new Producto(id, "BARCELONA", 100, "./camisetas/barselona.webp");
     } else if (id === 6) {
-        producto = new Producto(id, "CELTA DE VIGO", 100, "./camisetas/celta-de-vigo.jpg");
+        producto = new Producto(id, "LIVERPOOL", 100, "./camisetas/liverpool.webp");
     }
 
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Agragaste al carrito',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
     carrito.push(producto);
+    
 
  
     actualizarCarrito();
@@ -109,6 +118,8 @@ function cargarDesdeLocalStorage() {
 
 document.addEventListener("DOMContentLoaded", function() {
     cargarDesdeLocalStorage();
+
+    
 });
 
 
@@ -119,3 +130,45 @@ function eliminarDelCarrito(index) {
     actualizarCarrito();
     actualizarMontoTotal();
 }
+
+
+
+function finalizarCompra() {
+   
+    Swal.fire('Compra finalizada ')
+
+
+    carrito = [];
+    localStorage.removeItem("carrito");
+    actualizarCarrito();
+    actualizarMontoTotal();
+}
+
+
+
+
+
+
+async function obtenerDatosDeAPI() {
+    const url = 'https://football-pro.p.rapidapi.com/api/v2.0/fixtures/11867339?include=bench&tz=Europe%2FAmsterdam';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'f2597f4f77mshf2f3868fac67838p188986jsnb13d7726fbcf',
+            'X-RapidAPI-Host': 'soccer-football-info.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json(); 
+        console.log(result);
+        
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    obtenerDatosDeAPI();
+});
